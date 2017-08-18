@@ -2,9 +2,7 @@
 package competitive.programming.adhoc.games;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Minesweeper_UVa10189 {
@@ -12,9 +10,9 @@ public class Minesweeper_UVa10189 {
 	public static void main(String[] args) throws Exception {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		String line;
+		int t = 0;
 
 		while ((line = br.readLine()) != null && !line.equals("0 0")) {
 
@@ -22,37 +20,50 @@ public class Minesweeper_UVa10189 {
 			int m = Integer.parseInt(st.nextToken());
 			int n = Integer.parseInt(st.nextToken());
 
-			String[][] mines = new String[m][n];
-			int[][] res = new int[m][n];
+			String[][] mines = new String[m + 2][n + 2];
+			int[][] res = new int[m + 2][n + 2];
 
-			for (int i = 0; i < mines.length; i++) {
+			for (int i = 1; i <= m; i++) {
 				line = br.readLine();
 				String[] vec = line.split("");
 
-				for (int j = 0; j < mines[i].length; j++) {
+				for (int j = 1; j <= n; j++) {
 
-					mines[i][j] = vec[j];
+					mines[i][j] = vec[j - 1];
 
 				}
 			}
 
-			for (int i = 0; i < mines.length; i++) {
-				for (int j = 0; j < mines[i].length; j++) {
+			for (int i = 0; i < m + 2; i++) {
+				for (int j = 0; j < n + 2; j++) {
 
-					if (i == 0 && j == 0 && mines[i][j].equals("*")) {
-						// si está en el borde izquiero superior
-						res[i + 1][j]++;
-						res[i + 1][j + 1]++;
-						res[i][j + 1]++;
+					if (mines[i][j] != null) {
 
+						if (mines[i][j].equals("*")) {
+
+							// ocho posiciones
+							res[i - 1][j - 1]++;
+							res[i - 1][j]++;
+							res[i - 1][j + 1]++;
+							res[i][j - 1]++;
+							res[i][j + 1]++;
+							res[i + 1][j - 1]++;
+							res[i + 1][j]++;
+							res[i + 1][j + 1]++;
+
+						}
 					}
-					
+
 				}
 			}
+			
+			if (t > 0) {
+				System.out.println();
+			}
+			System.out.println("Field #" + (++t) + ":");
 
-			System.out.println();
-			for (int i = 0; i < mines.length; i++) {
-				for (int j = 0; j < mines[i].length; j++) {
+			for (int i = 1; i <= m; i++) {
+				for (int j = 1; j <= n; j++) {
 
 					if (mines[i][j].equals("*")) {
 						System.out.print("*");
@@ -62,11 +73,8 @@ public class Minesweeper_UVa10189 {
 				}
 				System.out.println();
 			}
-
 		}
 
 		br.close();
-		bw.close();
 	}
-
 }
