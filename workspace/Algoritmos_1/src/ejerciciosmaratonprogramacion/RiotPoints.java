@@ -1,7 +1,8 @@
 package ejerciciosmaratonprogramacion;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+
 import com.unicomfacauca.estructurasdedatos.algoritmos.ordenamiento.ArrayUtil;
 
 /**
@@ -14,7 +15,7 @@ public class RiotPoints {
 
 	public static void main(String[] args) throws Exception {
 
-		BufferedReader reader = new BufferedReader(new FileReader("riotpoints.in"));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		// 1era linea
 		String line = reader.readLine();

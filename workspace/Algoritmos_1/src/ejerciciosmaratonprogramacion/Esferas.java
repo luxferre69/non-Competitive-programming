@@ -1,7 +1,7 @@
 package ejerciciosmaratonprogramacion;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
 
 /**
  * Ejercicio B "Las esferas del dragón" - Maratón de programación 11 CCC
@@ -14,9 +14,7 @@ public class Esferas {
 
 	public static void main(String[] args) throws Exception {
 
-		FileReader file = new FileReader("esferas.in");
-
-		BufferedReader reader = new BufferedReader(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		String line = reader.readLine();
 		int cases = Integer.parseInt(line);

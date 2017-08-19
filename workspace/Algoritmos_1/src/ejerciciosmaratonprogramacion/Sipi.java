@@ -1,7 +1,7 @@
 package ejerciciosmaratonprogramacion;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
 
 import com.unicomfacauca.estructurasdedatos.algoritmos.ordenamiento.Sort;
 
@@ -15,7 +15,7 @@ public class Sipi {
 
 	public static void main(String[] args) throws Exception {
 
-		BufferedReader reader = new BufferedReader(new FileReader("sipi.in"));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		// 1era linea
 		String line = reader.readLine();

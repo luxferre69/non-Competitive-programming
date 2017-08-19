@@ -2,7 +2,7 @@ package ejerciciosmaratonprogramacion;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -17,9 +17,7 @@ public class DueloMagia {
 
 	public static void main(String[] args) throws Exception {
 
-		FileReader file = new FileReader("duelo.in");
-
-		BufferedReader reader = new BufferedReader(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		DecimalFormatSymbols symbols = new DecimalFormatSymbols();
@@ -42,7 +40,7 @@ public class DueloMagia {
 			double velHarry = Double.parseDouble(vels[0]);
 			double velElqueNo = Double.parseDouble(vels[1]);
 
-			// tiempo = distancia / vel 
+			// tiempo = distancia / vel
 			// distancia = time * velocity
 
 			double time = length / (velHarry + velElqueNo);
@@ -50,7 +48,7 @@ public class DueloMagia {
 
 			cont++;
 			writer.write("Duelo #" + cont + ": " + decimalFormat.format(distance) + "\n");
-			
+
 		}
 
 		writer.close();
