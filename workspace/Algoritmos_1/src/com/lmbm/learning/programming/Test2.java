@@ -85,62 +85,25 @@ public class Test2 {
 		// ".", ".", " " },
 		// { " ", ".", ".", ".", ".", " " }, { " ", " ", " ", " ", " ", " "} };
 
-		String[][] mat = { { null, null, null, null, null, null, null }, { null, "*", "*", ".", ".", ".", null },
-				{ null, ".", ".", ".", ".", ".", null }, { null, ".", "*", ".", ".", ".", null },
-				{ null, null, null, null, null, null, null } };
-		int[][] res = new int[3 + 2][5 + 2];
-
-		for (int i = 0; i < mat.length; i++) {
-			for (int j = 0; j < mat[i].length; j++) {
-				System.out.print(mat[i][j]);
+		String let = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+		
+		String pp = "WERTYUIOP[]\\SDFGHJKL;,'XCVBNM,./1234567890-=";
+		
+		
+		for (int i = 0; i < pp.length(); i++) {
+			
+			if (String.valueOf(pp.charAt(i)).equals(" ")) {
+				System.out.print(" ");
 			}
-			System.out.println();
-		}
-
-		System.out.println();
-
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 7; j++) {
-
-				if (mat[i][j] != null) {
-					if (mat[i][j].equals("*")) {
-
-						// ocho posiciones
-						res[i - 1][j - 1]++;
-						res[i - 1][j]++;
-						res[i - 1][j + 1]++;
-						res[i][j - 1]++;
-						res[i][j + 1]++;
-						res[i + 1][j - 1]++;
-						res[i + 1][j]++;
-						res[i + 1][j + 1]++;
-
-					}
+			
+			for (int j = 0; j < let.length(); j++) {
+				
+				if (String.valueOf(pp.charAt(i)).equals(String.valueOf(let.charAt(j)))) {
+					System.out.print(let.toCharArray()[j-1]);
 				}
+				
 			}
-
-		}
-
-		for (int i = 0; i < res.length; i++) {
-			for (int j = 0; j < res[i].length; j++) {
-				System.out.print(res[i][j]);
-			}
-			System.out.println();
-		}
-
-		System.out.println();
-
-		for (int i = 1; i <= 3; i++) {
-			for (int j = 1; j <= 5; j++) {
-
-				if (mat[i][j].equals("*")) {
-					System.out.print("*");
-				} else {
-					System.out.print(res[i][j]);
-				}
-
-			}
-			System.out.println();
+			
 		}
 
 	}
