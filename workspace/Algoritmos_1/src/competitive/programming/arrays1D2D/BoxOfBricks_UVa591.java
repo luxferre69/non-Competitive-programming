@@ -1,4 +1,4 @@
-package competitive.programming.arrays;
+package competitive.programming.arrays1D2D;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

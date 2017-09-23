@@ -1,8 +1,13 @@
 package com.lmbm.learning.programming;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Arrays;
 import java.util.Formatter;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Test2 {
 
@@ -85,27 +90,32 @@ public class Test2 {
 		// ".", ".", " " },
 		// { " ", ".", ".", ".", ".", " " }, { " ", " ", " ", " ", " ", " "} };
 
-		String let = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+//		String let = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+//		
+//		String pp = "WERTYUIOP[]\\SDFGHJKL;,'XCVBNM,./1234567890-=";
+//		
+//		
+//		for (int i = 0; i < pp.length(); i++) {
+//			
+//			if (String.valueOf(pp.charAt(i)).equals(" ")) {
+//				System.out.print(" ");
+//			}
+//			
+//			for (int j = 0; j < let.length(); j++) {
+//				
+//				if (String.valueOf(pp.charAt(i)).equals(String.valueOf(let.charAt(j)))) {
+//					System.out.print(let.toCharArray()[j-1]);
+//				}
+//				
+//			}
+//			
+//		}
+		DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+		dfs.setDecimalSeparator('.');
+		DecimalFormat df = new DecimalFormat("0.00", dfs);
 		
-		String pp = "WERTYUIOP[]\\SDFGHJKL;,'XCVBNM,./1234567890-=";
-		
-		
-		for (int i = 0; i < pp.length(); i++) {
-			
-			if (String.valueOf(pp.charAt(i)).equals(" ")) {
-				System.out.print(" ");
-			}
-			
-			for (int j = 0; j < let.length(); j++) {
-				
-				if (String.valueOf(pp.charAt(i)).equals(String.valueOf(let.charAt(j)))) {
-					System.out.print(let.toCharArray()[j-1]);
-				}
-				
-			}
-			
-		}
-
+		double n = 8.89999916;
+		//System.out.printf("%.1f", n);
+		System.out.println(df.format(n));
 	}
-
 }

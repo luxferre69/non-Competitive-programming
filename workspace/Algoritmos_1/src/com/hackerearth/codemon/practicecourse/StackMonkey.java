@@ -1,4 +1,4 @@
-package com.hackerearth.codemon.practice.veryeasy;
+package com.hackerearth.codemon.practicecourse;
 
 import java.util.Scanner;
 

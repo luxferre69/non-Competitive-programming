@@ -44,23 +44,24 @@ class ch2_02_algorithm_collections {
     Collections.reverse(v);
 
     System.out.println(v);
-    System.out.printf("==================\n");
+    System.out.printf("=========REVERSE=========\n");
 
     // shuffle the content again
     Collections.shuffle(v);
     System.out.println(v);
-    System.out.printf("==================\n");
+    System.out.printf("=========SHUFFLE=========\n");
 
     // sort ascending
     Collections.sort(v);
     System.out.println(v);
-    System.out.printf("==================\n");
+    System.out.printf("=========SORT=========\n");
 
+    System.out.println();
     Vector<team> nus = new Vector<team>();
-    nus.add(new team(1, 1, 10));
-    nus.add(new team(2, 3, 60));
-    nus.add(new team(3, 1, 20));
-    nus.add(new team(4, 3, 60));
+    nus.add(new team(1, 2, 10));
+    nus.add(new team(3, 1, 11));
+    nus.add(new team(1, 2, 21));
+    nus.add(new team(1, 1, 25));
 
     // without sorting, they will be ranked like this:
     for (int i = 0; i < 4; i++)

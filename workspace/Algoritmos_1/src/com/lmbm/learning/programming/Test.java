@@ -69,12 +69,10 @@ public class Test {
 	}
 	
 	public void update(){
-		Test t = new Test();
-		t.setMail("luis@mail.com");
 		for (Test test : listaCadenas) {
 			if (test.getMail().equals("mail@mail.com")) {
-				
-				listaCadenas.set(1, t);
+				test.setMail("lmbm6@unicomfa");
+				listaCadenas.set(0, test);
 			}
 		}
 	}

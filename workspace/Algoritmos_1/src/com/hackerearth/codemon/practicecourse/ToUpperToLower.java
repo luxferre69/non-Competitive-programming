@@ -1,4 +1,4 @@
-package com.hackerearth.codemon.practice.veryeasy;
+package com.hackerearth.codemon.practicecourse;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
